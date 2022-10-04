@@ -4,7 +4,7 @@ import 'package:todo/views/plan_creator_screen.dart';
 import 'package:todo/views/plan_screen.dart';
 
 void main() {
-  runApp(const MasterPlanApp());
+  runApp(PlanProvider(child: const MasterPlanApp()));
 }
 
 class MasterPlanApp extends StatelessWidget {
@@ -12,10 +12,8 @@ class MasterPlanApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PlanProvider(
-      child: MaterialApp(
-          theme: ThemeData(primarySwatch: Colors.purple),
-          home: PlanCreatorScreen()),
-    );
+    return MaterialApp(
+        theme: ThemeData(primarySwatch: Colors.purple),
+        home: PlanCreatorScreen());
   }
 }
